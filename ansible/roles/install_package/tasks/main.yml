@@ -1,0 +1,15 @@
+---
+- name: Install package on Debian-based systems
+  apt:
+    name: "{{ package_name }}"
+    state: present
+  when: ansible_os_family == "Debian"
+  become: yes
+
+- name: Install package on RedHat-based systems
+  yum:
+    name: "{{ package_name }}"
+    state: present
+  when: ansible_os_family == "RedHat"
+  become: yes---
+# tasks file for /home/vboxuser/ISA_Tsaruk/ansible/roles/install_package

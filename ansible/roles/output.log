@@ -1,0 +1,19 @@
+Using /etc/ansible/ansible.cfg as config file
+
+PLAY [Set hostname on remote machine] ******************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [10.0.2.15]
+
+TASK [set_hostname : Change hostname] ******************************************
+ok: [10.0.2.15] => {"ansible_facts": {"ansible_domain": "", "ansible_fqdn": "viacheslav-tsaruk-lab2", "ansible_hostname": "viacheslav-tsaruk-lab2", "ansible_nodename": "viacheslav-tsaruk-lab2"}, "changed": false, "name": "viacheslav-tsaruk-lab2"}
+
+TASK [set_hostname : Update /etc/hostname] *************************************
+ok: [10.0.2.15] => {"changed": false, "checksum": "516a8e462e5ed74728af945df7939b027dd5f2ce", "dest": "/etc/hostname", "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/etc/hostname", "size": 23, "state": "file", "uid": 0}
+
+PLAY [Change hostname] *********************************************************
+skipping: no hosts matched
+
+PLAY RECAP *********************************************************************
+10.0.2.15                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

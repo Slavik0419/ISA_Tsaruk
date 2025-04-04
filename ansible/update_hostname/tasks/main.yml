@@ -1,0 +1,20 @@
+---
+- name: Update hostname
+  become: true
+  ansible.builtin.hostname:
+    name: "viacheslav-tsaruk-lab2"
+
+- name: Update /etc/hostname file
+  become: true
+  ansible.builtin.copy:
+    dest: /etc/hostname
+    content: "viacheslav-tsaruk-lab2\n"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Apply hostname change
+  become: true
+  ansible.builtin.command:
+    cmd: hostnamectl set-hostname viacheslav-tsaruk-lab2---
+# tasks file for update_hostname

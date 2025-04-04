@@ -1,0 +1,14 @@
+---
+- name: Change hostname
+  become: yes
+  ansible.builtin.hostname:
+    name: "viacheslav-tsaruk-lab2"
+
+- name: Update /etc/hostname
+  become: yes
+  ansible.builtin.copy:
+    dest: /etc/hostname
+    content: "viacheslav-tsaruk-lab2\n"
+    owner: root
+    group: root
+    mode: '0644'

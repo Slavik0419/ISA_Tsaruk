@@ -1,0 +1,2 @@
+[target]
+10.0.2.15 ansible_user=user2 ansible_ssh_pass=12345678

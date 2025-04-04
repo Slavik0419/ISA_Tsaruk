@@ -1,0 +1,14 @@
+---
+- name: Set hostname on remote machine
+  hosts: target
+  roles:
+    - set_hostname
+- name: Change hostname
+  hosts: targets
+  roles:
+    - update_hostname
+
+- name: Install a package
+  hosts: target
+  roles:
+    - install_package

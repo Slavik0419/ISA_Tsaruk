@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - /home/vboxuser/ISA_Tsaruk/ansible/roles/install_package
